@@ -2,7 +2,7 @@
 
 Aplikasi kalender Hijriah untuk Android dengan tanggal Hijriah sebagai pengalaman utama, jadwal salat, alarm adzan, arah Kiblat, tiga tema, dan ikon aplikasi yang berubah mengikuti tanggal.
 
-> Versi terbaru: **1.9.0**  
+> Versi terbaru: **1.9.1**  
 > Android minimum: **Android 8.0 (API 26)**  
 > Paket aplikasi: `id.kalender.hijriah`
 
@@ -19,6 +19,9 @@ Aplikasi kalender Hijriah untuk Android dengan tanggal Hijriah sebagai pengalama
 - Jadwal salat berdasarkan lokasi dengan pilihan metode perhitungan.
 - Koreksi waktu setiap salat dari −5 sampai +5 menit.
 - Alarm salat dengan adzan bawaan, nada bawaan ponsel, atau audio lokal pilihan pengguna.
+- Pratinjau otomatis ketika suara adzan dipilih.
+- Volume adzan khusus aplikasi 0–100% yang tidak mengubah volume alarm atau media ponsel.
+- Tombol **Hentikan adzan** pada notifikasi alarm.
 - Arah Kiblat dengan pemeriksaan lokasi dan panduan kalibrasi kompas.
 - Koreksi tanggal Hijriah untuk menyesuaikan keputusan rukyat/hisab setempat.
 
@@ -26,12 +29,12 @@ Aplikasi kalender Hijriah untuk Android dengan tanggal Hijriah sebagai pengalama
 
 Unduh APK terbaru dari bagian **Releases** pada halaman GitHub proyek ini, lalu pilih berkas:
 
-`Kalender-Hijriah-Ikon-Adaptif-3-Tema-v1.9.0.apk`
+`Kalender-Hijriah-Volume-Adzan-v1.9.1.apk`
 
-SHA-256 APK versi 1.9.0:
+SHA-256 APK versi 1.9.1:
 
 ```text
-AB66C63711572E07A0CBFA40D70B74F24A961E8EB03D64619F8C181BCD727CB7
+9372BF8C795CD862B6E53C069DDAAE74242783CF41E7673D174E01065AA2CB57
 ```
 
 Pastikan nama berkas dan checksum sesuai sebelum memasang. APK resmi ditandatangani; pembaruan berikutnya harus memakai tanda tangan yang sama agar dapat dipasang di atas versi lama.
@@ -65,6 +68,8 @@ Setelah instalasi selesai, Anda boleh menonaktifkan kembali **Allow from this so
 - **Mulai setelah perangkat menyala** — menjadwalkan ulang alarm dan memperbarui ikon setelah ponsel dinyalakan.
 
 Pemilihan audio lokal memakai pemilih dokumen Android. Aplikasi tidak mengunggah file audio atau lokasi pengguna ke server aplikasi.
+
+Pengaturan volume adzan merupakan pengali volume internal aplikasi. Pengaturan ini tidak menggeser volume alarm atau media sistem, tetapi keluaran akhir tetap mengikuti kemampuan speaker, perangkat audio yang tersambung, serta pembatasan mode senyap dari Android/perangkat.
 
 ## Catatan akurasi
 
@@ -114,4 +119,3 @@ Rincian audio juga tersimpan di `app/src/main/assets/audio_licenses.txt`.
 ## Status lisensi proyek
 
 Belum ada lisensi umum yang diberikan untuk source code khusus proyek ini. Kode dapat dilihat di GitHub, tetapi penggunaan ulang atau distribusi turunannya memerlukan izin pemilik proyek. Komponen pihak ketiga tetap mengikuti lisensi sumber masing-masing.
-
