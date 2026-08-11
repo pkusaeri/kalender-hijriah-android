@@ -2,10 +2,8 @@
 
 Aplikasi kalender Hijriah untuk Android dengan tanggal Hijriah sebagai pengalaman utama, jadwal salat, alarm adzan, arah Kiblat, tiga tema, dan ikon aplikasi yang berubah mengikuti tanggal.
 
-> Versi terbaru: **1.9.4**
->
-> Android minimum: **Android 8.0 (API 26)**
->
+> Versi terbaru: **1.9.1**  
+> Android minimum: **Android 8.0 (API 26)**  
 > Paket aplikasi: `id.kalender.hijriah`
 
 ## Fitur
@@ -25,20 +23,18 @@ Aplikasi kalender Hijriah untuk Android dengan tanggal Hijriah sebagai pengalama
 - Volume adzan khusus aplikasi 0–100% yang tidak mengubah volume alarm atau media ponsel.
 - Tombol **Hentikan adzan** pada notifikasi alarm.
 - Arah Kiblat dengan pemeriksaan lokasi dan panduan kalibrasi kompas.
-- Pencarian Kiblat bertahap: lokasi terakhir yang masih baru dipakai langsung, lokasi tersimpan menjadi cadangan cepat, dan GPS tetap digunakan saat diperlukan.
-- Alur kompas kembali seperti versi 1.9.0, dengan lokasi tersimpan sebagai cadangan agar pencarian biasanya lebih cepat.
 - Koreksi tanggal Hijriah untuk menyesuaikan keputusan rukyat/hisab setempat.
 
 ## Unduh APK
 
 Unduh APK terbaru dari bagian **Releases** pada halaman GitHub proyek ini, lalu pilih berkas:
 
-`Kalender-Hijriah-Kompas-v1.9.4.apk`
+`Kalender-Hijriah-Volume-Adzan-v1.9.1.apk`
 
-SHA-256 APK versi 1.9.4:
+SHA-256 APK versi 1.9.1:
 
 ```text
-285B900D92B41C5263AD8B832936289E94FA06D1C93E1D07892415B0760F83EE
+9372BF8C795CD862B6E53C069DDAAE74242783CF41E7673D174E01065AA2CB57
 ```
 
 Pastikan nama berkas dan checksum sesuai sebelum memasang. APK resmi ditandatangani; pembaruan berikutnya harus memakai tanda tangan yang sama agar dapat dipasang di atas versi lama.

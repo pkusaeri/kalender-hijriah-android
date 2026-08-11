@@ -12,11 +12,8 @@ public class QiblaActivity extends Activity implements SensorEventListener{
   state=1;locationDelivered=false;fallbackLocation=null;body.removeAllViews();ProgressBar wait=new ProgressBar(this);body.addView(wait,new LinearLayout.LayoutParams(-1,dp(70)));TextView label=tv("Mencari lokasi GPS dan jaringan…",16,textPrimary);label.setGravity(Gravity.CENTER);body.addView(label);TextView note=tv("Pastikan Lokasi aktif. Proses dapat memerlukan beberapa detik.",12,muted);note.setGravity(Gravity.CENTER);body.addView(note);
   try{
    activeLocationManager=(LocationManager)getSystemService(LOCATION_SERVICE);
-   android.content.SharedPreferences saved=getSharedPreferences("settings",0);if(saved.getBoolean("has_location",false)){Location stored=new Location("tersimpan");stored.setLatitude(saved.getFloat("latitude",-6.2f));stored.setLongitude(saved.getFloat("longitude",106.8167f));stored.setAccuracy(saved.getFloat("location_accuracy",5000));stored.setTime(saved.getLong("location_time",0));fallbackLocation=stored;}
    requestProvider(LocationManager.NETWORK_PROVIDER);requestProvider(LocationManager.GPS_PROVIDER);
-   long age=fallbackLocation==null?Long.MAX_VALUE:System.currentTimeMillis()-fallbackLocation.getTime();if(fallbackLocation!=null&&fallbackLocation.getTime()>0&&age<1800000L){Location recent=fallbackLocation;locationHandler.post(()->locationReady(recent));return;}
-   locationHandler.postDelayed(()->{if(!locationDelivered&&fallbackLocation!=null)locationReady(fallbackLocation);},2500);
-   locationHandler.postDelayed(()->{if(locationDelivered)return;Toast.makeText(this,"Lokasi belum tersedia. Pastikan mode Lokasi aktif, lalu coba lagi.",Toast.LENGTH_LONG).show();showPrerequisite();},8000);
+   locationHandler.postDelayed(()->{if(locationDelivered)return;if(fallbackLocation!=null)locationReady(fallbackLocation);else{Toast.makeText(this,"Lokasi belum tersedia. Pastikan mode Lokasi aktif, lalu coba lagi.",Toast.LENGTH_LONG).show();showPrerequisite();}},18000);
   }catch(Exception e){Toast.makeText(this,"Layanan lokasi tidak dapat diakses",Toast.LENGTH_LONG).show();showPrerequisite();}
  }
  private void requestProvider(String provider){
@@ -35,7 +32,7 @@ public class QiblaActivity extends Activity implements SensorEventListener{
  };
  private void locationReady(Location l){
   if(l==null||locationDelivered)return;locationDelivered=true;locationHandler.removeCallbacksAndMessages(null);try{if(activeLocationManager!=null)activeLocationManager.removeUpdates(locationListener);}catch(Exception ignored){}
-  getSharedPreferences("settings",0).edit().putFloat("latitude",(float)l.getLatitude()).putFloat("longitude",(float)l.getLongitude()).putFloat("location_accuracy",l.hasAccuracy()?l.getAccuracy():-1).putLong("location_time",l.getTime()>0?l.getTime():System.currentTimeMillis()).putBoolean("has_location",true).apply();qibla=PrayerUtils.qibla(this);showCalibration();
+  getSharedPreferences("settings",0).edit().putFloat("latitude",(float)l.getLatitude()).putFloat("longitude",(float)l.getLongitude()).putFloat("location_accuracy",l.hasAccuracy()?l.getAccuracy():-1).putBoolean("has_location",true).apply();qibla=PrayerUtils.qibla(this);showCalibration();
  }
  @Override public void onRequestPermissionsResult(int r,String[] p,int[] g){super.onRequestPermissionsResult(r,p,g);if(r==51&&(checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION)==PackageManager.PERMISSION_GRANTED||checkSelfPermission(Manifest.permission.ACCESS_COARSE_LOCATION)==PackageManager.PERMISSION_GRANTED))requestLocation();else showPrerequisite();}
  @Override protected void onDestroy(){super.onDestroy();locationHandler.removeCallbacksAndMessages(null);try{if(activeLocationManager!=null)activeLocationManager.removeUpdates(locationListener);}catch(Exception ignored){}}
