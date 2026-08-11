@@ -2,8 +2,10 @@
 
 Aplikasi kalender Hijriah untuk Android dengan tanggal Hijriah sebagai pengalaman utama, jadwal salat, alarm adzan, arah Kiblat, tiga tema, dan ikon aplikasi yang berubah mengikuti tanggal.
 
-> Versi terbaru: **1.9.3**  
-> Android minimum: **Android 8.0 (API 26)**  
+> Versi terbaru: **1.9.4**
+>
+> Android minimum: **Android 8.0 (API 26)**
+>
 > Paket aplikasi: `id.kalender.hijriah`
 
 ## Fitur
@@ -24,19 +26,19 @@ Aplikasi kalender Hijriah untuk Android dengan tanggal Hijriah sebagai pengalama
 - Tombol **Hentikan adzan** pada notifikasi alarm.
 - Arah Kiblat dengan pemeriksaan lokasi dan panduan kalibrasi kompas.
 - Pencarian Kiblat bertahap: lokasi terakhir yang masih baru dipakai langsung, lokasi tersimpan menjadi cadangan cepat, dan GPS tetap digunakan saat diperlukan.
-- Mode panduan berjalan berbasis GPS untuk ponsel yang tidak memiliki sensor kompas magnetik.
+- Alur kompas kembali seperti versi 1.9.0, dengan lokasi tersimpan sebagai cadangan agar pencarian biasanya lebih cepat.
 - Koreksi tanggal Hijriah untuk menyesuaikan keputusan rukyat/hisab setempat.
 
 ## Unduh APK
 
 Unduh APK terbaru dari bagian **Releases** pada halaman GitHub proyek ini, lalu pilih berkas:
 
-`Kalender-Hijriah-Kiblat-GPS-v1.9.3.apk`
+`Kalender-Hijriah-Kompas-v1.9.4.apk`
 
-SHA-256 APK versi 1.9.3:
+SHA-256 APK versi 1.9.4:
 
 ```text
-B3689506B49933192508E9DAD16C402090A9FF52D3360BF9CFF027A58DC29555
+285B900D92B41C5263AD8B832936289E94FA06D1C93E1D07892415B0760F83EE
 ```
 
 Pastikan nama berkas dan checksum sesuai sebelum memasang. APK resmi ditandatangani; pembaruan berikutnya harus memakai tanda tangan yang sama agar dapat dipasang di atas versi lama.
@@ -79,7 +81,6 @@ Pengaturan volume adzan merupakan pengali volume internal aplikasi. Pengaturan i
 - Awal bulan Hijriah resmi dapat berbeda 1–2 hari karena rukyat, hisab, dan keputusan otoritas setempat. Gunakan **Koreksi tanggal Hijriah** bila diperlukan.
 - Jadwal salat adalah hasil perhitungan. Pilih metode yang sesuai dan gunakan koreksi menit untuk menyesuaikan jadwal resmi daerah.
 - Kompas ponsel dipengaruhi casing magnetik, logam, dan gangguan sekitar. Aktifkan lokasi, gunakan di tempat terbuka, lalu lakukan gerakan angka delapan sebelum mencari arah Kiblat.
-- Jika ponsel tidak memiliki sensor magnetik, aplikasi tidak dapat membaca putaran ponsel ketika pengguna diam. Mode GPS akan meminta pengguna berjalan lurus sekitar 10–15 meter agar arah perjalanan dapat dihitung tanpa memberikan panah kompas palsu.
 
 ## Membangun dari source code
 
