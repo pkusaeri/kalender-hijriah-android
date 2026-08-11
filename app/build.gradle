@@ -1,0 +1,18 @@
+plugins { id 'com.android.application' }
+
+android {
+    namespace 'id.kalender.hijriah'
+    compileSdk 35
+
+    defaultConfig {
+        applicationId 'id.kalender.hijriah'
+        minSdk 26
+        targetSdk 35
+        versionCode 13
+        versionName '1.9.0'
+    }
+}
+
+dependencies {
+    implementation 'com.batoulapps.adhan:adhan:1.2.1'
+}

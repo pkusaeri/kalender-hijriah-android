@@ -1,0 +1,14 @@
+Bundled adhan audio
+
+1. Beautiful Adhan
+   Author: Adam-synagda
+   Source: https://commons.wikimedia.org/wiki/File:Beautiful_adhan.ogg
+   License: CC0 1.0 Universal
+
+2. Adhan Doha
+   Source: https://archive.org/details/adhan.recordings.from.doha.qatar
+   Recording: Adhan_Doha_Qatar_02_Dhuhr_Adhan.ogg
+   Marking: Public Domain Mark 1.0
+
+The application also lets users select an audio file stored locally on their
+own Android device. Local files are not copied out of the device.

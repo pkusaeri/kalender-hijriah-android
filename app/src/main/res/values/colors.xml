@@ -1,0 +1,15 @@
+<resources>
+    <color name="navy">#071A33</color>
+    <color name="emerald">#087F5B</color>
+    <color name="icon_bg_zamrud">#087F5B</color>
+    <color name="icon_bg_safir">#167F83</color>
+    <color name="icon_bg_zaitun">#D8CFBD</color>
+    <color name="gold">#F4C95D</color>
+    <color name="cream">#F7F5EF</color>
+    <color name="app_background">#07131F</color>
+    <color name="surface">#102331</color>
+    <color name="surface_soft">#162B36</color>
+    <color name="border">#29404B</color>
+    <color name="text_primary">#F7F5EF</color>
+    <color name="text_secondary">#AEBDB7</color>
+</resources>
