@@ -17,7 +17,7 @@ public class CalendarIconWidget extends AppWidgetProvider {
 
     static void updateAll(Context context){
         AppWidgetManager manager=AppWidgetManager.getInstance(context);
-        ComponentName component=new ComponentName(context,CalendarIconWidget.class);
+        ComponentName component=new ComponentName(context,CalendarIconWidgetV2.class);
         for(int id:manager.getAppWidgetIds(component))manager.updateAppWidget(id,views(context));
     }
 

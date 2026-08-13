@@ -23,9 +23,13 @@
         <receiver android:name=".IconUpdateReceiver" android:exported="false">
             <intent-filter><action android:name="android.intent.action.BOOT_COMPLETED"/><action android:name="android.intent.action.MY_PACKAGE_REPLACED"/><action android:name="android.intent.action.DATE_CHANGED"/><action android:name="android.intent.action.TIME_SET"/><action android:name="android.intent.action.TIMEZONE_CHANGED"/></intent-filter>
         </receiver>
-        <receiver android:name=".CalendarIconWidget" android:exported="false" android:label="@string/widget_name">
+        <receiver android:name=".CalendarIconWidgetV2" android:exported="true" android:label="@string/widget_name">
             <intent-filter><action android:name="android.appwidget.action.APPWIDGET_UPDATE" /></intent-filter>
             <meta-data android:name="android.appwidget.provider" android:resource="@xml/calendar_icon_widget_info" />
+        </receiver>
+        <receiver android:name=".PrayerScheduleWidget" android:exported="true" android:label="@string/prayer_widget_name">
+            <intent-filter><action android:name="android.appwidget.action.APPWIDGET_UPDATE" /></intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/prayer_schedule_widget_info" />
         </receiver>
         <activity-alias android:name=".Day01" android:targetActivity=".MainActivity" android:enabled="true" android:exported="true" android:icon="@mipmap/icon_zamrud_h01"><intent-filter><action android:name="android.intent.action.MAIN"/><category android:name="android.intent.category.LAUNCHER"/></intent-filter></activity-alias>
         <activity-alias android:name=".Day02" android:targetActivity=".MainActivity" android:enabled="false" android:exported="true" android:icon="@mipmap/icon_zamrud_h02"><intent-filter><action android:name="android.intent.action.MAIN"/><category android:name="android.intent.category.LAUNCHER"/></intent-filter></activity-alias>

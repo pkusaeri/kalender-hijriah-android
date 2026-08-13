@@ -37,6 +37,7 @@ public final class IconUpdater {
         }
         prefs.edit().putString("active_icon_component",desired).apply();
         CalendarIconWidget.updateAll(c);
+        PrayerScheduleWidget.updateAll(c);
         schedule(c,gregorian);
     }
 
