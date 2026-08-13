@@ -1,1 +1,5 @@
-<resources><string name="app_name">Kalender Hijriah</string></resources>
+<resources>
+    <string name="app_name">Kalender Hijriah</string>
+    <string name="widget_name">Kalender Hijriah Dinamis</string>
+    <string name="widget_description">Ikon tanggal yang diperbarui saat pergantian hari.</string>
+</resources>

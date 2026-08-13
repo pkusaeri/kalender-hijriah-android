@@ -36,7 +36,20 @@ public final class IconUpdater {
             pm.setComponentEnabledSetting(new ComponentName(c,previous),PackageManager.COMPONENT_ENABLED_STATE_DISABLED,PackageManager.DONT_KILL_APP);
         }
         prefs.edit().putString("active_icon_component",desired).apply();
+        CalendarIconWidget.updateAll(c);
         schedule(c,gregorian);
+    }
+
+    public static int currentIconResource(Context c){
+        android.content.SharedPreferences prefs=c.getSharedPreferences("settings",Context.MODE_PRIVATE);
+        int correction=prefs.getInt("correction",0);
+        int hijriDay=HijrahDate.from(SolarTime.effectiveCivilDate(c).plusDays(correction)).get(ChronoField.DAY_OF_MONTH);
+        boolean gregorian="gregorian".equals(prefs.getString("main_calendar","hijri"));
+        String theme=prefs.getString("app_theme","zamrud");
+        int day=gregorian?LocalDate.now().getDayOfMonth():hijriDay;
+        String name="icon_"+theme+"_"+(gregorian?"g":"h")+String.format("%02d",day);
+        int id=c.getResources().getIdentifier(name,"mipmap",c.getPackageName());
+        return id==0?R.mipmap.ic_launcher:id;
     }
 
     private static void schedule(Context c,boolean gregorian){
