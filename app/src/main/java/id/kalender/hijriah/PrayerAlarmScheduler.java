@@ -10,6 +10,7 @@ import java.util.Date;
 public final class PrayerAlarmScheduler {
     private static final int[] INDEX={0,2,3,4,5};
     public static void update(Context c){
+        PrayerScheduleWidget.updateAll(c);
         AlarmManager am=(AlarmManager)c.getSystemService(Context.ALARM_SERVICE);
         for(int day=0;day<2;day++)for(int pos=0;pos<5;pos++)am.cancel(pending(c,day*10+pos,""));
         if(!c.getSharedPreferences("settings",0).getBoolean("alarm_enabled",false))return;
